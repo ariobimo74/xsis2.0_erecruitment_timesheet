@@ -7,7 +7,7 @@ import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name = "users")
-public class UserEntity extends CommonEntity
+public class UserEntity
 {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_id_pk")
@@ -16,26 +16,25 @@ public class UserEntity extends CommonEntity
     private Integer id;
 
     @NotEmpty
-    @Column(name = "user_name", nullable = false, unique = true)
+    @Column(name = "username", nullable = false, unique = true)
     private String userName;
 
     @NotEmpty
     @Column(name = "user_password", nullable = false)
     private String userPassword;
 
-    @NotEmpty
-    @Column(name = "user_roles")
-    private String userRoles;
+    @Column(name = "is_active")
+    private boolean isActive;
 
     public UserEntity() {
     }
 
-    public UserEntity(Integer id, String userName, String userPassword, String userRoles)
+    public UserEntity(Integer id, String userName, String userPassword, boolean isActive)
     {
         this.id = id;
         this.userName = userName;
         this.userPassword = userPassword;
-        this.userRoles =userRoles;
+        this.isActive = isActive;
     }
 
     public Integer getId() {
@@ -62,11 +61,11 @@ public class UserEntity extends CommonEntity
         this.userPassword = userPassword;
     }
 
-    public String getUserRoles() {
-        return userRoles;
+    public boolean isActive() {
+        return isActive;
     }
 
-    public void setUserRoles(String userRoles) {
-        this.userRoles = userRoles;
+    public void setActive(boolean active) {
+        isActive = active;
     }
 }
