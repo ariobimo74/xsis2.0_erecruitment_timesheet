@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -24,7 +25,7 @@ public class TimesheetRest
     }
 
     @GetMapping(path = "/asc/search")
-    public List<TimesheetDto> findSearchTimesheetByDateAsc(@RequestParam(name = "startDate") String startDate, @RequestParam(name = "endDate") String endDate, @RequestParam(name = "rpg") Integer rpg, @RequestParam("page") Integer page)
+    public List<TimesheetDto> findSearchTimesheetByDateAsc(@RequestParam(name = "startDate") Date startDate, @RequestParam(name = "endDate") Date endDate, @RequestParam(name = "rpg") Integer rpg, @RequestParam("page") Integer page)
     {
         Integer x = (rpg*page) - rpg;
 
@@ -32,7 +33,7 @@ public class TimesheetRest
     }
 
     @GetMapping(path = "/desc/search")
-    public List<TimesheetDto> findSearchTimesheetByDateDesc(@RequestParam(name = "startDate") String startDate, @RequestParam(name = "endDate") String endDate, @RequestParam(name = "rpg") Integer rpg, @RequestParam(name = "page") Integer page)
+    public List<TimesheetDto> findSearchTimesheetByDateDesc(@RequestParam(name = "startDate") Date startDate, @RequestParam(name = "endDate") Date endDate, @RequestParam(name = "rpg") Integer rpg, @RequestParam(name = "page") Integer page)
     {
         Integer x = (rpg*page) - rpg;
 
