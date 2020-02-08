@@ -13,16 +13,16 @@ public class CommonEntity
 {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd hh:MM:ss")
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "created_on")
+    @Column(name = "created_on", nullable = false)
     private Date createdOn;
-    @Column(name = "created_by")
+    @Column(name = "created_by", nullable = false)
     private Integer createdBy;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd hh:MM:ss")
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "updated_on")
     private Date updatedOn;
-    @Column(name = "updated_on")
+    @Column(name = "updated_by")
     private Integer updatedBy;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd hh:mm:ss")
