@@ -34,8 +34,8 @@ query = "SELECT timesheet.id, timesheet.status, timesheet.timesheet_date AS tang
         "LEFT JOIN client AS client\n" +
         "ON placement.client_id = client.id\n" +
         "WHERE timesheet.is_delete = false\n" +
-        "AND (timesheet.timesheet_date\n" +
-        "BETWEEN :startDate AND :endDate )\n" +
+        "AND (CAST(timesheet.timesheet_date AS varchar)\n" +
+        "BETWEEN :startDate AND :endDate)\n" +
         "ORDER BY timesheet.timesheet_date ASC\n" +
         "LIMIT :rpg OFFSET :page")
 
@@ -47,8 +47,8 @@ query = "SELECT timesheet.id, timesheet.status, timesheet.timesheet_date AS tang
         "LEFT JOIN client AS client\n" +
         "ON placement.client_id = client.id\n" +
         "WHERE timesheet.is_delete = false\n" +
-        "AND (timesheet.timesheet_date\n" +
-        "BETWEEN :startDate AND :endDate )\n" +
+        "AND (CAST(timesheet.timesheet_date AS varchar)\n" +
+        "BETWEEN :startDate AND :endDate)\n" +
         "ORDER BY timesheet.timesheet_date DESC\n" +
         "LIMIT :rpg OFFSET :page")
 

@@ -22,12 +22,12 @@ public class TimesheetService
         return timesheetRepository.viewTimesheet();
     }
 
-    public List<TimesheetDto> getSearchTimesheetByDateAsc(@Param("startDate") Date startDate, @Param("endDate") Date endDate, @Param("rpg") Integer rpg, @Param("page") Integer page)
+    public List<TimesheetDto> getSearchTimesheetByDateAsc(@Param("startDate") String startDate, @Param("endDate") String endDate, @Param("rpg") Integer rpg, @Param("page") Integer page)
     {
         return timesheetRepository.searchTimesheetByDateAsc(startDate, endDate, rpg, page);
     }
 
-    public List<TimesheetDto> getSearchTimesheetByDateDesc(@Param("startDate") Date startDate, @Param("endDate") Date endDate, @Param("rpg") Integer rpg, @Param("page") Integer page)
+    public List<TimesheetDto> getSearchTimesheetByDateDesc(@Param("startDate") String startDate, @Param("endDate") String endDate, @Param("rpg") Integer rpg, @Param("page") Integer page)
     {
         return timesheetRepository.searchTimesheetByDateDesc(startDate, endDate, rpg, page);
     }
